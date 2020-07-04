@@ -9,7 +9,6 @@ defmodule Cards do
   ## Examples
 
       iex> Cards.create_deck()
-      :[...]
 
   """
 
