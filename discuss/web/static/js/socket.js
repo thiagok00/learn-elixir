@@ -54,8 +54,15 @@ let socket = new Socket("/socket", {params: {token: window.userToken}})
 socket.connect()
 
 function commentTemplate(comment) {
-    return `<li class="collection-item">${comment.content}</li>`
-
+    const email = comment.user ? comment.user.email : 'Anonymous'
+    
+    return `<li class="collection-item">
+              ${comment.content}
+              <div class="secondary-content">
+                ${email}
+              </div>
+            </li>
+            `
 }
 
 function renderComments(comments) {
